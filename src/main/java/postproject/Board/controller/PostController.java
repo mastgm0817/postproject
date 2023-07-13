@@ -12,13 +12,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
-
-    private final PostService postService;
-
     @Autowired
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
+    private  PostService postService;
 
     @GetMapping
     public ResponseEntity<List<Post>> getAllPosts() {
