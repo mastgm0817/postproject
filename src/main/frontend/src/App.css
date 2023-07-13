@@ -37,7 +37,7 @@
   }
 }
 
-#create-post-form {
+#post-form {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -45,8 +45,42 @@
   transition: transform 0.3s ease-in-out;
   background: white;
   padding: 20px;
+  transform:translateY(100%);
 }
 
-.create-post-form-open {
-  transform: translateY(-100%);
+.form-open {
+  animation-duration:1s;
+  animation-name:form-slidein;
+  animation-fill-mode: forwards;
+}
+
+.form-close {
+  animation-duration:1s;
+  animation-name:form-slideout;
+  animation-fill-mode: forwards;
+}
+
+@keyframes form-slidein{
+    from {bottom:-100%;}
+    to {bottom:50%;}
+}
+
+@keyframes form-slideout{
+    from {bottom:50%;}
+    to {bottom:-100%;}
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  animation-duration:1s;
+  animation-name:form-slideout;
+  animation-fill-mode: forwards;
+}
+
+.selected {
+  height: auto;
 }
