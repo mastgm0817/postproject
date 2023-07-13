@@ -74,6 +74,7 @@ const PostList = () => {
           </Table>
         </TableContainer>
       </div>
+
       <div>
         <h2 style={{ textAlign: 'center' }}>새로운 게시글 작성</h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
