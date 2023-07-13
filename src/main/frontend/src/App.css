@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#create-post-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  padding: 20px;
+}
+
+.create-post-form-open {
+  transform: translateY(-100%);
+}

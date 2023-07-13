@@ -9,6 +9,7 @@ import {
   TableCell,
   Paper
 } from '@mui/material'
+import './App.css'
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
@@ -41,7 +42,22 @@ const PostList = () => {
       .catch(error => {
         console.error('Error creating post:', error);
       });
+
+      setShowForm(false);
   };
+
+  const [showForm, setShowForm] = useState(false);
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
+
+
+// 페이지
 
   return (
     <>
@@ -55,7 +71,7 @@ const PostList = () => {
               <TableRow>
                 <TableCell>No</TableCell>
                 <TableCell>제목</TableCell>
-                <TableCell>작성일</TableCell>
+                <TableCell>작성일자</TableCell>
                 <TableCell>추천수</TableCell>
                 <TableCell>조회수</TableCell>
               </TableRow>
@@ -75,8 +91,13 @@ const PostList = () => {
         </TableContainer>
       </div>
 
-      <div>
-        <h2 style={{ textAlign: 'center' }}>새로운 게시글 작성</h2>
+      <button onClick={toggleForm}>게시글 작성하기</button>
+
+
+// 게시글 작성 폼
+      {showForm && (
+      <div id="create-post-form" className={showForm ? 'create-post-form-open' : ''}>
+        <h2 style={{ textAlign: 'center' }}>새로운 게시글 작.성</h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <input
             type="text"
@@ -96,14 +117,17 @@ const PostList = () => {
           <button onClick={handleCreatePost}>게시글 작성</button>
         </div>
       </div>
+      )}
     </>
   );
 }
 
+
+
 const App = () => {
   return (
     <div className="App">
-      <PostList/>
+      <PostList />
     </div>
   );
 }
