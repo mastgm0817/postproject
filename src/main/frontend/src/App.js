@@ -54,7 +54,7 @@ const PostList = () => {
             <TableHead>
               <TableRow>
                 <TableCell>No</TableCell>
-                <TableCell>제목</TableCell>
+                <TableCell>제목1</TableCell>
                 <TableCell>작성일</TableCell>
                 <TableCell>추천수</TableCell>
                 <TableCell>조회수</TableCell>
@@ -74,6 +74,7 @@ const PostList = () => {
           </Table>
         </TableContainer>
       </div>
+
       <div>
         <h2 style={{ textAlign: 'center' }}>새로운 게시글 작성</h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
